@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Agenda_v01.Páginas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AgendContactos
+namespace Agenda
 {
     /// <summary>
     /// Lógica de interacción para MainWindow.xaml
@@ -23,6 +24,13 @@ namespace AgendContactos
         public MainWindow()
         {
             InitializeComponent();
+            ConmutadorDePestaña.conmutadorPestaña = this;
+            ConmutadorDePestaña.Cambiar(new Inicial());
+        }
+
+        public void CambiarPestaña(UserControl siguientePestaña)
+        {
+            this.Content = siguientePestaña;
         }
     }
 }

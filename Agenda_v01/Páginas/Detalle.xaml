@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Agenda_v01.Páginas.Detalle"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Agenda_v01.Páginas"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="400">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0" Margin="20" HorizontalAlignment="Center">
+            <Button x:Name="botonListado" FontSize="15" Padding="10,2,10,2" Content="Todos" Click="BotonListado_Click"></Button>
+            <Button x:Name="botonAlta" FontSize="15" Padding="10,2,10,2" Content="Nuevo" Click="BotonAlta_Click"></Button>
+            <Button x:Name="botonBuscar" FontSize="15" Padding="10,2,10,2" Content="Buscar" Click="BotonBuscar_Click"></Button>
+            <Button x:Name="botonDetalle" IsEnabled="False" FontSize="15" Padding="10,2,10,2" Content="Detalle" Click="BotonDetalle_Click"></Button>
+            <Button x:Name="botonSobre" FontSize="15" Padding="10,2,10,2" Content="About" Click="BotonDetalle_Click"></Button>
+        </WrapPanel>
+        <Grid HorizontalAlignment="Center" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="160"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="1.8*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Margin="20" Grid.Column="0" Grid.Row="0" Source="/Images/default_profile.png" Width="100" Height="100" />
+            <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="center">
+                <TextBox x:Name="TextBoxNombre" BorderBrush="White" FontSize="25" FontWeight="Bold" Text="Adam Smith" IsReadOnly="True" ></TextBox>
+                <TextBox x:Name="TextBoxTelefono" BorderBrush="White" FontSize="25" Text="690 64 00 50" IsReadOnly="True" ></TextBox>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+                <TextBox  x:Name="TextBoxEmail" BorderBrush="White" FontSize="22" Text="adam@smith.com" IsReadOnly="True" FontStyle="Italic" MinWidth="275" TextAlignment="Center"></TextBox>
+            </StackPanel>
+            <Button x:Name="BotonGuardar" Grid.Column="0" Grid.Row="2" Content="Guardar cambios" Grid.ColumnSpan="2" Height="30" Width="120" Visibility="Hidden" Click="BotonGuardar_Click"></Button>
+        </Grid>
+        <WrapPanel Grid.Row="2" HorizontalAlignment="Center" >
+            <Button x:Name="BotonRegPrevio" Content="Anterior" Margin="0,0,30,0" Click="BotonRegPrevio_Click" Width="75"/>
+            <Button x:Name="BotonEditar" Content="Editar" FontSize="15" Padding="10,2,10,2" Click="BotonEditar_Click"></Button>
+            <Button x:Name="BotonEliminar" Content="Eliminar" FontSize="15" Padding="10,2,10,2" Click="BotonEliminar_Click"></Button>
+            <Button x:Name="BotonRegSiguiente" Content="Siguiente" Margin="30,0,0,0" Click="BotonRegSiguiente_Click" Width="75"/>
+        </WrapPanel>
+    </Grid>
+</UserControl>

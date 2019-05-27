@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Agenda_v01.Páginas.Lista_Contactos"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Agenda_v01.Páginas"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="400">
+    <Grid Background="White">
+        <WrapPanel Grid.Row="0" Margin="20" HorizontalAlignment="Center">
+            <Button x:Name="botonListado" IsEnabled="False" FontSize="15" Padding="10,2,10,2" Content="Todos" Click="BotonListado_Click"></Button>
+            <Button x:Name="botonAlta" FontSize="15" Padding="10,2,10,2" Content="Nuevo" Click="BotonAlta_Click"></Button>
+            <Button x:Name="botonBuscar" FontSize="15" Padding="10,2,10,2" Content="Buscar" Click="BotonBuscar_Click"></Button>
+            <Button x:Name="botonDetalle" FontSize="15" Padding="10,2,10,2" Content="Detalle" Click="BotonDetalle_Click"></Button>
+            <Button x:Name="botonSobre" FontSize="15" Padding="10,2,10,2" Content="About" Click="BotonDetalle_Click"></Button>
+        </WrapPanel>
+        <StackPanel Margin="20,80,20,50">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="textoBusqueda"  Grid.Column="0" Padding="7" Width="Auto" TextChanged="TextoBusqueda_TextChanged"></TextBox>
+                <Button Grid.Column="1">
+                    <Image Source="/Images/search_icon.png"></Image>
+                </Button>
+            </Grid>
+            
+            <TextBlock Text="Contactos" FontWeight="Bold" FontSize="25"></TextBlock>
+
+            <ListBox x:Name="ListBoxContactos" Height="255" ScrollViewer.VerticalScrollBarVisibility="Hidden" MouseDoubleClick="ListBoxContactos_MouseDoubleClick">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding Nombre}"></TextBlock>
+                            <TextBlock FontSize="12" FontStyle="Italic" Text="{Binding Email}"></TextBlock>
+                            <TextBlock FontSize="12" Text="{Binding Telefono}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Agenda_v01.Páginas.Buscar_Contacto"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Agenda_v01.Páginas"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="400">
+    <Grid Background="White">
+        <WrapPanel Grid.Row="0" Margin="20" HorizontalAlignment="Center">
+            <Button x:Name="botonListado" FontSize="15" Padding="10,2,10,2" Content="Todos" Click="BotonListado_Click"></Button>
+            <Button x:Name="botonAlta" FontSize="15" Padding="10,2,10,2" Content="Nuevo" Click="BotonAlta_Click"></Button>
+            <Button x:Name="botonBuscar" IsEnabled="False" FontSize="15" Padding="10,2,10,2" Content="Buscar" Click="BotonBuscar_Click"></Button>
+            <Button x:Name="botonDetalle" FontSize="15" Padding="10,2,10,2" Content="Detalle" Click="BotonDetalle_Click"></Button>
+            <Button x:Name="botonSobre" FontSize="15" Padding="10,2,10,2" Content="About" Click="BotonDetalle_Click"></Button>
+        </WrapPanel>
+        <StackPanel Margin="20,80,20,50">
+            <TextBlock Text="Buscar por:" FontSize="50"></TextBlock>
+            <ComboBox>
+                <ComboBoxItem Content="Nombre"></ComboBoxItem>
+                <ComboBoxItem Content="Edad"></ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+
+    </Grid>
+</UserControl>
